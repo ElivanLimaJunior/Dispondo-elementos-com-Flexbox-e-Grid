@@ -1,0 +1,158 @@
+Na aula anterior, no exercício Faça como eu fiz: Exercitando o grid foi desenvolvido uma página com vários elementos de tamanhos e cores diferentes, posicionados em diferentes partes da página utilizando as propriedades de grid. Porém, os espaços entre elementos foram criados com a propriedade margin. Nós já discutimos as grandes vantagens de trabalhar com grid.
+
+Substitua essas propriedades margin por novas propriedades do grid.
+
+Utilize o código abaixo como referência ou seu próprio projeto da aula passada:
+
+
+--AREA DO CÓDIGO --
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body class="corpo">
+    <header class="cabecalho"></header>
+    <nav class="lateral"></nav>
+    <section class="meio"></section>
+    <section class="direita-cima"></section>
+    <section class="direita-baixo"></section>
+</body>
+</html>
+
+--AREA DO CÓDIGO--
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.corpo {
+    background-color: #444444;
+    padding: 8px;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.cabecalho {
+    background-color: #cc2a2a;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 8px;
+    grid-column: span 4;
+}
+
+.lateral {
+    background-color: #45cc2a;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 8px;
+    grid-row: span 3;
+}
+
+.meio {
+    background-color: #2aa6cc;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 8px;
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+.direita-cima {
+    background-color: #352acc;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 8px;
+}
+
+.direita-baixo {
+    background-color: #cc2a96;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 8px;
+    grid-row: span 2;
+}
+
+--ÁREA DO CÓDIGO--
+
+Opinião do instrutor
+
+O primeiro passo é remover todas as propriedades de margin dos elementos. O próximo é adicionar dentro do grid container a propriedade gap com o valor de 16px (lembrando que as margens de outros elementos acabam somando). Mas um detalhe aqui é que essa propriedade não adiciona espaçamento nas partes dos elementos que encostam no grid container. Então depois de adicionar a propriedade gap, precisamos alterar o valor da propriedade padding para 16px. Visualmente não deve haver mudanças, mas agora temos a vantagem da facilidade de manutenção.
+
+O código como gabarito:
+
+--ÁREA DO CÓDIGO--
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.corpo {
+    background-color: #444444;
+    padding: 16px;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.cabecalho {
+    background-color: #cc2a2a;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-column: span 4;
+}
+
+.lateral {
+    background-color: #45cc2a;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-row: span 3;
+}
+
+.meio {
+    background-color: #2aa6cc;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+.direita-cima {
+    background-color: #352acc;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.direita-baixo {
+    background-color: #cc2a96;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-row: span 2;
+}
+
+--ÁREA DO CÓDIGO--
