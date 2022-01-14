@@ -5,17 +5,17 @@
 
 body {
     background-color: #1D232A;
-    font-family: 'Open Sans', 'icones' ,sans-serif;
-    color: #fff;
+    font-family: 'Open Sans', 'icones', sans-serif;
+    color: #FFFFFF;
 }
 
 .cabecalho {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #15191c;
+    background-color: #15191C;
     padding: 8px 16px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 1.16);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
 }
 
 .cabecalho__menu i::before {
@@ -33,28 +33,25 @@ body {
 }
 
 .menu-lateral {
-    position: absolute;
-    left: -100vw;
     display: flex;
     flex-direction: column;
+    background-color: #15191C;
     width: 75vw;
     height: 100vh;
 
-    background-color: #15191C;
-
+    position: absolute;
+    left: -100vw;
     transition: .25s;
-    z-index: 99;
 }
 
 .menu-lateral--ativo {
-    /*left: 0;*/
+    left: 0;
     transition: .25s;
 }
 
 .menu-lateral__logo {
-    align-self: center;
-
     width: 118px;
+    align-self: center;
     padding: 16px;
 }
 
@@ -67,9 +64,9 @@ body {
 }
 
 .menu-lateral__link--ativo {
-    color: #fff;
+    color: #FFFFFF;
     padding-left: 56px;
-    border-left: 8px solid white;
+    border-left: 8px solid #FFFFFF;
 }
 
 .menu-lateral__link::before {
@@ -116,7 +113,7 @@ body {
     font-weight: 700;
 }
 
-.titulo--secao {
+.titulo-secao {
     font-size: 1.2rem;
     font-weight: 700;
 }
@@ -125,7 +122,7 @@ body {
     width: 100%;
     border-radius: 15px;
     overflow: hidden;
-    background-color: #2c343a;
+    background-color: #2C343A;
 }
 
 .cartao--destaque {
@@ -150,25 +147,25 @@ body {
 }
 
 .cartao__perfil {
-    color: #95999c;
-    font-size: 0.9rem;    
+    color: #95999C;
+    font-size: 0.9rem;
     grid-column: span 2;
 }
 
 .cartao__info {
     display: flex;
     align-items: center;
-    color: #95999c;
+    color: #95999C;
 }
 
 .cartao__info--tempo::before {
     content: "\e90c";
-    margin-right: 8px;
+    margin-right: 8px;    
 }
 
 .cartao__info--visualizacao::before {
     content: "\e90f";
-    margin-left: 8px;
+    margin-right: 8px;    
 }
 
 .cartao__botao {
