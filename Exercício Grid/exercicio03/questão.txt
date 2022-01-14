@@ -1,0 +1,175 @@
+Faça como eu fiz: Reposicionando elementos com grid
+
+
+
+
+Vamos trocar as posições dos elementos na página sem modificar sua estrutura HTML. Utilize apenas as propriedades grid-row e grid-column.
+
+O layout deve ficar como a imagem abaixo:
+
+O objetivo final é praticamente um espelho. Ainda utilizando as 4 colunas e 4 linhas, os elementos devem ficar na seguinte ordem:
+
+Primeira coluna ocupando duas linhas e uma coluna - o elemento roxo com classe direita-baixo;
+
+Primeira coluna ocupando apenas uma linha e uma coluna - o elemento azul com a classe 'direita-cima';
+
+Segunda coluna ocupando duas linhas e duas colunas - o elemento azul claro com a classe meio;
+
+Quarta coluna ocupando três linhas e uma coluna - o elemento verde com a classe lateral;
+
+Na última linha ocupando todas as colunas - o elemento vermelho com a classe cabecalho.
+
+Você pode usar o seu próprio projeto ou pegar os arquivos de referência abaixo:
+
+
+    --área do código--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body class="corpo">
+    <header class="cabecalho"></header>
+    <nav class="lateral"></nav>
+    <section class="meio"></section>
+    <section class="direita-cima"></section>
+    <section class="direita-baixo"></section>
+</body>
+</html>
+
+    --área do código--
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.corpo {
+    background-color: #444444;
+    padding: 16px;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.cabecalho {
+    background-color: #cc2a2a;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-column: span 4;
+}
+
+.lateral {
+    background-color: #45cc2a;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-row: span 3;
+}
+
+.meio {
+    background-color: #2aa6cc;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+.direita-cima {
+    background-color: #352acc;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.direita-baixo {
+    background-color: #cc2a96;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-row: span 2;
+}
+
+--área do código--
+
+Opinião do instrutor
+
+Este é um ótimo exercício para melhorar a visualização mental do espaço de um grid container. Além do que foi feito agora, tente mudar as posições e tamanhos dos elementos utilizando as propriedades vistas neste exercício.
+
+O código gabarito do exercício:
+
+-- área do código --
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.corpo {
+    background-color: #444444;
+    padding: 16px;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.cabecalho {
+    background-color: #cc2a2a;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-column: span 4;
+}
+
+.lateral {
+    background-color: #45cc2a;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-row: 1 / span 3;
+    grid-column: 4;
+}
+
+.meio {
+    background-color: #2aa6cc;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-column: span 2;
+    grid-row: 1 / span 3;
+}
+
+.direita-cima {
+    background-color: #352acc;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.direita-baixo {
+    background-color: #cc2a96;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+-- área do código --
